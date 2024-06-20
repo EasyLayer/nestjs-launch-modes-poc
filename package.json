@@ -1,0 +1,42 @@
+{
+  "name": "nestjs-launch-modes",
+  "version": "0.0.0",
+  "description": "",
+  "author": "Yaroslav Pavliuk",
+  "license": "",
+  "scripts": {
+    "clear": "yarn run clear:dist && yarn run clear:node_modules",
+    "clear:node_modules": "rimraf node_modules && yarn cache clean",
+    "clear:dist": "rimraf dist",
+    "start:http-server": "ts-node apps/http-server/main.ts",
+    "start:nest-context": "ts-node apps/nest-context/main.ts",
+    "start:websockets": "ts-node apps/websockets/main.ts",
+    "start:microservice-with-create-method": "ts-node apps/microservice-with-create-method/main.ts",
+    "start:microservice-with-connect-method": "ts-node apps/microservice-with-connect-method/main.ts",
+    "start:context-event-producer": "ts-node apps/context-event-producer/main.ts",
+    "start:server-as-provider": "ts-node apps/server-as-provider/main.ts",
+    "wscat": "npx wscat -c 'ws://localhost:3005/socket.io/?EIO=4&transport=websocket'"
+  },
+  "packageManager": "yarn@3.6.0",
+  "dependencies": {
+    "@nestjs/common": "10.2.8",
+    "@nestjs/core": "10.2.8",
+    "@nestjs/microservices": "10.2.8",
+    "@nestjs/platform-express": "10.2.8",
+    "@nestjs/platform-socket.io": "10.2.8",
+    "@nestjs/websockets": "10.2.8",
+    "amqplib": "0.10.3",
+    "reflect-metadata": "0.1.13",
+    "rxjs": "7.8.1"
+  },
+  "devDependencies": {
+    "@types/node": "20.9.0",
+    "rimraf": "3.0.2",
+    "ts-node": "10.9.1",
+    "typescript": "5.2.2",
+    "wscat": "5.2.0"
+  },
+  "devEngines": {
+    "node": ">=16.x"
+  }
+}
